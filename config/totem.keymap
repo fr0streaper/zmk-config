@@ -47,7 +47,14 @@
         };
     };
 
-    combos { compatible = "zmk,combos"; };
+    combos {
+        compatible = "zmk,combos";
+
+        Bootloader {
+            bindings = <&bootloader>;
+            key-positions = <0 10 21 9 19 30>;
+        };
+    };
 
     keymap {
         compatible = "zmk,keymap";
@@ -55,40 +62,40 @@
         Base {
             display-name = "Base";
             bindings = <
-              &kp Q       &kp W       &kp E          &kp R         &kp T        &kp Y    &kp U        &kp I        &kp O       &kp P
-              &hm LGUI A  &hm LALT S  &hm LCTRL D    &hm LSHIFT F  &kp G        &kp H    &hm RSHFT J  &hm RCTRL K  &hm RALT L  &hm RGUI SEMICOLON
-&lt 3 ESCAPE  &kp Z       &kp X       &kp C          &kp V         &kp B        &kp N    &kp M        &kp COMMA    &kp DOT     &kp SLASH           &kp APOSTROPHE
-                                      &mt LCTRL DEL  &lt 1 TAB     &kp SPACE    &kp RET  &lt 2 BSPC   &kp MINUS
+            &kp Q  &kp W  &kp E                 &kp R      &kp T    &kp Y  &kp U           &kp I      &kp O    &kp P
+            &kp A  &kp S  &kp D                 &kp F      &kp G    &kp H  &kp J           &kp K      &kp L    &kp SEMICOLON
+&kp ESCAPE  &kp Z  &kp X  &kp C                 &kp V      &kp B    &kp N  &kp M           &kp COMMA  &kp DOT  &kp SLASH      &kp LC(B)
+                          &kp LS(LA(LC(LGUI)))  &kp SPACE  &to 1    &to 2  &kp LEFT_SHIFT  &kp MINUS
             >;
         };
 
         Nav {
             display-name = "Nav";
             bindings = <
-              &kp TILDE       &trans     &kp UP_ARROW  &trans     &kp LBRC    &kp RBRC  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0
-              &kp LEFT_SHIFT  &kp LEFT   &kp DOWN      &kp RIGHT  &kp LBKT    &kp RBKT  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp MINUS
-&kp LEFT_ALT  &kp LEFT_WIN    &kp MINUS  &trans        &kp PLUS   &kp LPAR    &kp RPAR  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp KP_MULTIPLY  &kp PLUS
-                                         &trans        &trans     &trans      &trans    &trans        &kp DOT
+        &kp TAB           &kp LG(TAB)        &kp LC(LS(TAB))  &kp LC(TAB)   &kp C_VOLUME_UP      &kp HOME    &kp PAGE_DOWN  &kp PAGE_UP      &kp END        &kp DEL
+        &sk LEFT_SHIFT    &sk LEFT_ALT       &sk LCTRL        &sk LEFT_GUI  &kp C_VOLUME_DOWN    &kp LEFT    &kp DOWN       &kp UP           &kp RIGHT      &kp BACKSPACE
+&trans  &kp LA(LG(LEFT))  &kp LA(LG(RIGHT))  &kp K_PREV       &kp C_NEXT    &kp C_PLAY           &kp C_MENU  &caps_word     &kp PRINTSCREEN  &kp LC(SPACE)  &kp ENTER      &trans
+                                             &trans           &trans        &trans               &trans      &trans         &trans
             >;
         };
 
         Sym {
             display-name = "Sym";
             bindings = <
-                &kp EXCL  &kp AT  &kp HASH  &kp DOLLAR  &kp PERCENT    &kp CARET  &kp AMPERSAND  &kp KP_ASTERISK  &kp SQT  &kp DQT
-                &trans    &trans  &trans    &trans      &trans         &trans     &trans         &trans           &trans   &trans
-&studio_unlock  &trans    &trans  &trans    &trans      &trans         &kp UNDER  &kp EQUAL      &trans           &trans   &kp SLASH  &kp HOME
-                                  &trans    &trans      &trans         &trans     &trans         &trans
+        &kp TILDE  &kp LEFT_BRACKET  &kp LEFT_BRACE  &kp LEFT_PARENTHESIS  &kp EXCLAMATION    &kp BACKSLASH  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp CARET
+        &kp MINUS  &kp SINGLE_QUOTE  &kp EQUAL       &kp DOUBLE_QUOTES     &kp PLUS           &kp ASTRK      &sk LEFT_GUI           &sk LCTRL        &sk LEFT_ALT       &sk LEFT_SHIFT
+&trans  &kp HASH   &kp AT            &kp DOLLAR      &kp UNDERSCORE        &kp PERCENT        &kp AMPERSAND  &kp PIPE               &kp LESS_THAN    &kp GREATER_THAN   &kp GRAVE       &trans
+                                     &trans          &trans                &trans             &trans         &trans                 &trans
             >;
         };
 
         Fun {
             display-name = "Fun";
             bindings = <
-        &bootloader  &trans  &trans  &trans  &to 4     &trans  &trans  &trans  &kp END  &kp F1
-        &trans       &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans   &kp F10
-&trans  &trans       &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans   &kp F20  &kp F7
-                             &trans  &trans  &trans    &trans  &trans  &trans
+        &kp NUMBER_1    &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5    &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0
+        &sk LEFT_SHIFT  &sk LEFT_ALT  &sk LCTRL     &sk LEFT_GUI  &kp F11         &kp F12       &sk LEFT_GUI  &sk LCTRL     &sk LEFT_ALT  &sk LEFT_SHIFT
+&trans  &kp F1          &kp F2        &kp F3        &kp F4        &kp F5          &kp F6        &kp F7        &kp F8        &kp F9        &kp F10         &trans
+                                      &trans        &trans        &trans          &trans        &trans        &trans
             >;
         };
 
@@ -110,6 +117,15 @@
 &trans  &to 0    &trans        &trans        &trans        &trans    &trans         &trans         &trans  &trans  &kp F22          &kp LA(F4)
                                &kp J         &kp I         &kp M     &trans         &trans         &trans
             >;
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        NumLayer {
+            if-layers = <1 2>;
+            then-layer = <3>;
         };
     };
 };
