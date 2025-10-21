@@ -54,6 +54,16 @@
             bindings = <&bootloader>;
             key-positions = <0 10 21 9 19 30>;
         };
+
+        StudioUnlock {
+            bindings = <&studio_unlock>;
+            key-positions = <20 0 34 35 31 9>;
+        };
+
+        Ataman {
+            bindings = <&kp LS(LA(LC(A)))>;
+            key-positions = <26 27 28>;
+        };
     };
 
     keymap {
