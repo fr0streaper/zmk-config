@@ -62,7 +62,7 @@
 
         Ataman {
             bindings = <&kp LS(LA(LC(A)))>;
-            key-positions = <26 27 28>;
+            key-positions = <27 29 28>;
         };
     };
 
