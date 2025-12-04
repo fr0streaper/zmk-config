@@ -84,7 +84,7 @@
             bindings = <
         &kp TAB           &kp LG(TAB)        &kp LC(LS(TAB))  &kp LC(TAB)   &kp C_VOLUME_UP      &kp HOME    &kp PAGE_DOWN  &kp PAGE_UP      &kp END        &kp DEL
         &sk LEFT_SHIFT    &sk LEFT_ALT       &sk LCTRL        &sk LEFT_GUI  &kp C_VOLUME_DOWN    &kp LEFT    &kp DOWN       &kp UP           &kp RIGHT      &kp BACKSPACE
-&trans  &kp LA(LG(LEFT))  &kp LA(LG(RIGHT))  &kp C_PREV       &kp C_NEXT    &kp C_PLAY_PAUSE     &kp C_MENU  &caps_word     &kp PRINTSCREEN  &kp LC(SPACE)  &kp ENTER      &trans
+&trans  &kp LA(LG(LEFT))  &kp LA(LG(RIGHT))  &kp C_PREV       &kp C_NEXT    &kp C_PLAY_PAUSE     &kp C_MENU  &caps_word     &kp PRINTSCREEN  &kp LC(SPACE)  &kp ENTER      &kp LCMD
                                              &trans           &trans        &trans               &trans      &trans         &trans
             >;
         };
